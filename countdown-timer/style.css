@@ -4,11 +4,23 @@
     box-sizing: border-box;
 }
 
-body{
-    background-image: url(https://static.nationalgeographic.es/files/styles/image_3200/public/gettyimages-472099273.jpg?w=710&h=474);
-    font-family: 'IBM Plex Sans', sans-serif;
+body{    
+    background-image: url('./background-img.jpg.jpg');
     background-size: cover;
     background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
+    font-family: 'IBM Plex Sans', sans-serif;
     margin: 0;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+.countdown-container{
+    display: flex;
 }
