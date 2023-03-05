@@ -1,7 +1,7 @@
-const daysY = document.getElementById('days')
-const hoursY = document.getElementById('hours')
-const minsY = document.getElementById('mins')
-const secondsY = document.getElementById('seconds')
+const daysYear = document.getElementById('days')
+const hoursYear = document.getElementById('hours')
+const minsYear = document.getElementById('mins')
+const secondsYear = document.getElementById('seconds')
 
 const newYears = '1 Jan 2024'
 
@@ -16,15 +16,15 @@ function countDown() {
     const minutes = Math.floor(totalSeconds / 60) % 60;
     const seconds = Math.floor(totalSeconds) % 60;
 
-    daysY.innerHTML = days
-    hoursY.innerHTML = hours
-    minsY.innerHTML = minutes
-    secondsY.innerHTML = seconds   
-
-
+    daysYear.innerHTML = formatTime(days)
+    hoursYear.innerHTML = formatTime(hours)
+    minsYear.innerHTML = formatTime(minutes)
+    secondsYear.innerHTML = formatTime(seconds)   
 }
 
-countDown()
+function formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+}
 
 setInterval(countDown, 1000)
 
