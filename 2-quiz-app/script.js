@@ -33,6 +33,7 @@ const quizData = [
     },
 ];
 
+const answerEls = document.querySelectorAll(".answer");
 const questionEl = document.getElementById("question");
 const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
@@ -41,10 +42,10 @@ const d_text = document.getElementById("d_text");
 
 let currentQuiz = 0;
 
+loadQuiz();
+
 function loadQuiz() {
     const currentQuizData = quizData[currentQuiz];
-
-    console.log(currentQuizData.d);
 
     questionEl.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
@@ -54,4 +55,13 @@ function loadQuiz() {
 
 }
 
-loadQuiz();
+function getSelected() {
+    let answer = undefined;
+
+    answerEls.forEach((answerEl) => {
+        if (answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+    return answer
+}
