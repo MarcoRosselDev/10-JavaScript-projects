@@ -60,3 +60,12 @@ function addMeal(mealData, random = false) {
     mealsEl.appendChild(meal)
 
 }
+
+function addMealLs(mealId) {
+    const mealIds = getMealsLS();
+
+    localStorage.setItem(
+        'mealIds',
+        JSON.stringify(mealIds.filter((id) => id !== mealId))
+    )
+}
